@@ -1,0 +1,20 @@
+{
+  "name": "Rojgari",
+  "version": "1.0.0",
+  "main": "server.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon sever.js"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.4.8",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "graphql": "^14.2.1",
+    "mongoose": "^5.4.22",
+    "react-icons": "^3.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
