@@ -9,7 +9,7 @@ const Navbar = ({ color }) => {
       <h2>
         <Link to="/">Rojgari.list</Link>
       </h2>
-      <IoLogoTwitter />
+
       <Button>post a job</Button>
     </Nav>
   );

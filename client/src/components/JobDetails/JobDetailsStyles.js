@@ -53,9 +53,6 @@ export const DetailsWrapper = styled.div`
         .skills-list,
         .duties-list {
           margin-top: 2rem;
-          li:not(:last-child) {
-            margin-top: 1.5rem;
-          }
         }
       }
     }
