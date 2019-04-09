@@ -21,19 +21,19 @@ export const DetailsWrapper = styled.div`
       font-size: 2.5rem;
       /* font-weight: 600; */
       color: #ccc;
-      margin-top: 1rem;
+      /* margin-top: 0.rem; */
     }
     .location {
       font-size: 2rem;
       font-weight: bold;
-      margin-top: 1rem;
+      margin-top: 3rem;
     }
   }
   .details {
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-column-gap: 3rem;
-    margin-top: 5rem;
+    margin-top: 8rem;
     .about-job {
       background: #ffffff;
       padding: 3rem;
@@ -53,6 +53,9 @@ export const DetailsWrapper = styled.div`
         .skills-list,
         .duties-list {
           margin-top: 2rem;
+          li {
+            margin-top: 1rem;
+          }
         }
       }
     }

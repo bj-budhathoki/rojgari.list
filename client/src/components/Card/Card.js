@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { FaMapMarkerAlt, FaGlobe } from "react-icons/fa";
 import Button from "../Button/Button";
 import styled from "styled-components";
 const CardWrapper = styled.div`
@@ -24,8 +25,20 @@ const CardWrapper = styled.div`
   .publish {
     padding: 0.5rem 0;
     h3 {
-      color: #110;
+      color: #444444;
       text-transform: capitalize;
+    }
+  }
+  .links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    a {
+      text-decoration: none;
+      margin-top:0.5rem
+      font-weight:600;
+      &:hover{
+        text-decoration:underline;
+      }
     }
   }
 `;
@@ -43,14 +56,14 @@ const Card = ({ height, borderRadius }) => {
         </div>
         <div className="location">
           <h3>location</h3>
-          <p>Remote</p>
+          <p>{false ? <FaGlobe /> : <FaMapMarkerAlt />} Remote</p>
         </div>
         <div className="publish">
           <h3>publish</h3>
           <p>3 days ago</p>
         </div>
       </CardWrapper>
-      <Button width={100} bg="#339">
+      <Button width={100} bg="#339" borderRadius="0.5rem">
         Apply Now
       </Button>
     </div>

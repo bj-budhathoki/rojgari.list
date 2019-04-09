@@ -12,7 +12,7 @@ const Header = () => {
       <Navbar />
       <HeaderContent>
         <HeaderTitle>
-          WHERE YOU WILL <span>GROW</span> TOMORROW ?
+          YOUR DREAM JOB <span>FOR</span> THE FUTURE ?
         </HeaderTitle>
         <HeaderSlug>A Job Board for Tech Enthusiasts.</HeaderSlug>
       </HeaderContent>
