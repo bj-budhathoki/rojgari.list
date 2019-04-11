@@ -6,11 +6,18 @@ export const FormWrapper = styled.div`
   grid-template-columns: 2fr 1fr;
   grid-column-gap: 2rem;
   .form {
-    background: #ffff;
-    box-shadow: 0 0 0.2rem 0.2rem #f1f1f1;
-    padding: 1rem 3rem;
+    .thejob,
+    .thecompany {
+      background: #ffff;
+      padding: 1rem 3rem 3rem 3rem;
+      box-shadow: 0 0 0.3rem 0.4rem #f1f1f1;
+      margin-bottom: 2rem;
+      border-radius: 1.5rem;
+    }
     &__group {
       margin-top: 2rem;
+      input[type="file"] {
+      }
     }
     &__label {
       text-transform: capitalize;
