@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Navbar from "../../components/Navbar/Navbar";
-import Form from "../../components/Form/";
+import JobPostForm from "../../components/Form";
 
 const PostJonContainer = styled.div`
   padding: 3rem 10rem;
@@ -19,7 +19,7 @@ const PostJob = () => {
       <div className="title">
         <h1>Post a Job</h1>
       </div>
-      <Form />
+      <JobPostForm />
     </PostJonContainer>
   );
 };

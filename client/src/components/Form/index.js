@@ -1,2 +1,2 @@
-import Form from "./Form";
-export default Form;
+import JobPostForm from "./JobPostForm";
+export default JobPostForm;
