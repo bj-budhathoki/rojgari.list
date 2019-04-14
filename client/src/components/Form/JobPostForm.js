@@ -2,14 +2,23 @@ import React from "react";
 import { withFormik, Field } from "formik";
 import * as yup from "yup";
 import TextInput from "./TextInput";
+import Pricing from "../Pricing";
+import Button from "../Button/Button";
 import { FormWrapper } from "./FormStyles";
 let schema = yup.object().shape({
-  position: yup.string().required()
+  position: yup.string().required(),
+  name: yup.string().required(),
+  website: yup.string().required(),
+  url_email: yup.string().required(),
+  contact_email: yup.string().required()
 });
-const JobPostForm = ({ handleSubmit }) => {
+const JobPostForm = ({ handleSubmit, isSubmitting }) => {
+  const handleFormsubmit = e => {
+    e.preventDefault();
+  };
   return (
     <FormWrapper>
-      <form className="form" onSubmit={handleSubmit}>
+      <form className="form">
         <div className="thejob">
           <h2>The job</h2>
           <div className="form__group">
@@ -71,7 +80,7 @@ const JobPostForm = ({ handleSubmit }) => {
               name="name"
               type="text"
               placeholder="f.ex. abc"
-              label="name"
+              label="name*"
               component={TextInput}
             />
           </div>
@@ -81,7 +90,7 @@ const JobPostForm = ({ handleSubmit }) => {
               name="website"
               type="text"
               placeholder="f.ex. abc"
-              label="website"
+              label="website*"
               component={TextInput}
             />
           </div>
@@ -117,8 +126,8 @@ const JobPostForm = ({ handleSubmit }) => {
           </div>
           <div className="form__group">
             <Field
-              id="contact"
-              name="contact"
+              id="contact_email"
+              name="contact_email"
               type="email"
               placeholder="example@company.com"
               label="Contact E-Mail (just for us)*"
@@ -136,14 +145,38 @@ const JobPostForm = ({ handleSubmit }) => {
           </div>
         </div>
       </form>
-      <div>pricing</div>
+      <div>
+        <Pricing type="basic" price="free" />
+        <Pricing type="featured" price="100" />
+        <Button
+          disabled={isSubmitting}
+          type="submit"
+          onClick={handleSubmit}
+          bg="#339"
+          width={100}
+          borderRadius="1rem"
+        >
+          post your job
+        </Button>
+      </div>
     </FormWrapper>
   );
 };
 
 export default withFormik({
   mapPropsToValues: () => ({
-    position: ""
+    position: "",
+    location: "",
+    salary: "",
+    description: "",
+    tags: [],
+    name: "",
+    website: "",
+    twitter: "",
+    url_email: "",
+    company: "",
+    contact_email: "",
+    logo: ""
   }),
   handleSubmit: values => {
     console.log("handle submit", values);

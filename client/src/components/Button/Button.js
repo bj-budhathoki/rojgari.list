@@ -16,5 +16,9 @@ const Button = styled.button`
   &:hover {
     cursor: pointer;
   }
+  a {
+    color: ${colors.text};
+    text-decoration: none;
+  }
 `;
 export default Button;

@@ -6,7 +6,6 @@ const TextInput = ({
   label,
   ...props
 }) => {
-  console.log("hello error", errors);
   return (
     <>
       <div className="form__label">
@@ -14,7 +13,9 @@ const TextInput = ({
       </div>
       <input type="text" {...field} {...props} />
       {touched[field.name] && errors[field.name] && (
-        <div className="error">{errors[field.name]}</div>
+        <div className="error" style={{ color: "red" }}>
+          {errors[field.name]}
+        </div>
       )}
     </>
   );

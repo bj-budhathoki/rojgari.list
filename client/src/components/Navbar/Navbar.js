@@ -9,8 +9,9 @@ const Navbar = ({ color }) => {
       <h2>
         <Link to="/">Rojgari.list</Link>
       </h2>
-
-      <Button>post a job</Button>
+      <Button>
+        <Link to="/post-a-job">post a job</Link>
+      </Button>
     </Nav>
   );
 };
