@@ -2,20 +2,27 @@ import React from "react";
 import { withFormik, Field } from "formik";
 import * as yup from "yup";
 import TextInput from "./TextInput";
+import SelectInput from "./SelectInput";
 import Pricing from "../Pricing";
 import Button from "../Button/Button";
 import { FormWrapper } from "./FormStyles";
 let schema = yup.object().shape({
-  position: yup.string().required(),
+  position: yup.string().required("The position field is required !"),
   name: yup.string().required(),
   website: yup.string().required(),
   url_email: yup.string().required(),
-  contact_email: yup.string().required()
+  contact_email: yup.string().required(),
+  tags: yup
+    .array()
+    .min(3, "Pick at least 2 tags")
+    .of(
+      yup.object().shape({
+        label: yup.string().required(),
+        value: yup.string().required()
+      })
+    )
 });
-const JobPostForm = ({ handleSubmit, isSubmitting }) => {
-  const handleFormsubmit = e => {
-    e.preventDefault();
-  };
+const JobPostForm = ({ handleSubmit, isSubmitting, setFieldValue }) => {
   return (
     <FormWrapper>
       <form className="form">
@@ -65,10 +72,9 @@ const JobPostForm = ({ handleSubmit, isSubmitting }) => {
             <Field
               id="tags"
               name="tags"
-              type="text"
-              placeholder="f.ex, 90,000-110,000nrp/month"
               label="tags"
-              component={TextInput}
+              component={SelectInput}
+              onChange={setFieldValue}
             />
           </div>
         </div>
@@ -164,7 +170,7 @@ const JobPostForm = ({ handleSubmit, isSubmitting }) => {
 };
 
 export default withFormik({
-  mapPropsToValues: () => ({
+  mapPropsToValues: props => ({
     position: "",
     location: "",
     salary: "",
@@ -179,7 +185,12 @@ export default withFormik({
     logo: ""
   }),
   handleSubmit: values => {
-    console.log("handle submit", values);
+    const payload = {
+      ...values,
+      tags: values.tags.map(t => t.value)
+    };
+    console.log("handle submit", payload);
   },
-  validationSchema: schema
+  validationSchema: schema,
+  displayName: "postJob"
 })(JobPostForm);

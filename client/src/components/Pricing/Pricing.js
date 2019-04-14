@@ -3,7 +3,8 @@ import { PricingContainer } from "./PricingStyles";
 const Pricing = ({ type, price, benifits }) => {
   const getBenifits = () => {
     return (
-      benifits && benifits.map(benifit => <li key={benifit}>{benifit.name}</li>)
+      benifits &&
+      benifits.map((benifit, index) => <li key={index}>{benifit.name}</li>)
     );
   };
   return (

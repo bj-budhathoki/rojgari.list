@@ -11,7 +11,7 @@ const TextInput = ({
       <div className="form__label">
         <label htmlFor={id}>{label}</label>
       </div>
-      <input type="text" {...field} {...props} />
+      <input {...field} {...props} />
       {touched[field.name] && errors[field.name] && (
         <div className="error" style={{ color: "red" }}>
           {errors[field.name]}

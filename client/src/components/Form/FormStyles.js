@@ -23,7 +23,8 @@ export const FormWrapper = styled.div`
       text-transform: capitalize;
       font-weight: 500;
     }
-    input {
+    input,
+    select {
       width: 100%;
       height: 4rem;
       border-radius: 0.5rem;
