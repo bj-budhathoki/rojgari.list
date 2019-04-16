@@ -3,6 +3,7 @@ import { withFormik, Field } from "formik";
 import * as yup from "yup";
 import TextInput from "./TextInput";
 import SelectInput from "./SelectInput";
+import FileInput from "./FileInput";
 import Pricing from "../Pricing";
 import Button from "../Button/Button";
 import { FormWrapper } from "./FormStyles";
@@ -146,7 +147,8 @@ const JobPostForm = ({ handleSubmit, isSubmitting, setFieldValue }) => {
               name="logo"
               type="file"
               label="logo"
-              component={TextInput}
+              onChange={setFieldValue}
+              component={FileInput}
             />
           </div>
         </div>

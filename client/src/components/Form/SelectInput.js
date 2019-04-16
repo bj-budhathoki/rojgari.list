@@ -27,14 +27,6 @@ const SelectInput = ({
         <label htmlFor={id}>{label}</label>
       </div>
       <Select
-        styles={{
-          control: (base, state) =>
-            console.log(base) || {
-              ...base,
-              height: "34px",
-              "min-height": "34px"
-            }
-        }}
         {...props}
         isMulti={true}
         options={options}

@@ -23,13 +23,11 @@ export const FormWrapper = styled.div`
       text-transform: capitalize;
       font-weight: 500;
     }
-    input,
-    select {
+    .input {
       width: 100%;
-      height: 4rem;
       border-radius: 0.5rem;
       border: 0.2rem solid #ccc;
-      padding: 0 1rem;
+      padding: 1rem 1rem;
       margin-top: 0.5rem;
       outline: none;
       ::-webkit-input-placeholder {
