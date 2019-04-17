@@ -15,7 +15,7 @@ let schema = yup.object().shape({
   contact_email: yup.string().required(),
   tags: yup
     .array()
-    .min(3, "Pick at least 2 tags")
+    .min(1, "Pick at least 1 tags")
     .of(
       yup.object().shape({
         label: yup.string().required(),
@@ -189,6 +189,7 @@ export default withFormik({
   handleSubmit: values => {
     const payload = {
       ...values,
+      logo: values.logo.replace("C:\\fakepath\\", ""),
       tags: values.tags.map(t => t.value)
     };
     console.log("handle submit", payload);

@@ -58,22 +58,17 @@ const FileInput = ({
   onChange,
   ...props
 }) => {
-  const handleFileChange = event => {
-    console.log("change", event.currentTarget.files[0].name);
-    onChange("logo", event.currentTarget.files[0].name);
-  };
+  // const handleFileChange = event => {
+  //   console.log("change", event.currentTarget.files[0].name);
+  //   onChange("logo", event.currentTarget.files[0].name);
+  // };
 
   return (
     <>
       <div className="form__label">
         <label htmlFor={id}>{label}</label>
       </div>
-      <input
-        {...field}
-        {...props}
-        className="input"
-        onChange={handleFileChange}
-      />
+      <input {...field} {...props} className="input" />
       {touched[field.name] && errors[field.name] && (
         <div className="error" style={{ color: "red" }}>
           {errors[field.name]}

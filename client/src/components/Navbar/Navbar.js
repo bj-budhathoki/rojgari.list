@@ -1,6 +1,6 @@
 import React from "react";
 import { Nav } from "./NavabarStyles";
-import { IoLogoTwitter } from "react-icons/io";
+// import { IoLogoTwitter } from "react-icons/io";
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 const Navbar = ({ color }) => {

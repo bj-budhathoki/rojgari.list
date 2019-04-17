@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { corols } from "../../themes";
+// import { corols } from "../../themes";
 
 export const FormWrapper = styled.div`
   display: grid;

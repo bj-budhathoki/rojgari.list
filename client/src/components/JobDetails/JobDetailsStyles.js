@@ -43,7 +43,7 @@ export const DetailsWrapper = styled.div`
         text-align: justify;
         word-spacing: 0.2rem;
         span {
-          color: #339;
+          color: ${colors.primary};
           font-size: 2.5rem;
         }
       }
