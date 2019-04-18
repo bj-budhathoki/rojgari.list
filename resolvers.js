@@ -8,12 +8,7 @@ exports.resolvers = {
   Mutation: {
     addJob: async (root, args, ctx) => {
       const newJob = new ctx.Job({
-        jobTitle: args.jobTitle,
-        companyName: args.companyName,
-        companyLogo: args.companyLogo,
-        tags: args.tags,
-        address: args.address,
-        jobDescription: args.jobDescription
+        ...args
       }).save();
       return newJob;
     }
