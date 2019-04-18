@@ -7,21 +7,19 @@ const Job = ({ job }) => {
     <JobContainer>
       <JobContentLeft>
         <div className="company-logo">
-          <img src={job.companyLogo} alt="company name" />
+          <img src={job.logo} alt="company name" />
         </div>
         <div className="company-job">
           <Link
             to={{
-              pathname: `/job/${job.companyName}-${job.jobTitle
-                .split(" ")
-                .join("-")}`,
+              pathname: `/job/${job.name}-${job.position.split(" ").join("-")}`,
               id: job._id
             }}
             className="job-title"
           >
-            {job.jobTitle}
+            {job.position}
           </Link>
-          <div className="company-name">{job.companyName}</div>
+          <div className="company-name">{job.name}</div>
         </div>
       </JobContentLeft>
       <JobContentRight>
@@ -29,7 +27,7 @@ const Job = ({ job }) => {
           {job.tags && job.tags.map(tag => <div>{tag}</div>)}
         </div>
         <div className="location">
-          <FaMapMarkerAlt color="#ccc" /> &nbsp;<span>{job.address}</span>
+          <FaMapMarkerAlt color="#ccc" /> &nbsp; <span>{job.location}</span>
         </div>
       </JobContentRight>
     </JobContainer>
